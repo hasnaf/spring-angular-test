@@ -3,10 +3,10 @@ package com.example.api.controller;
 import com.example.api.model.Article;
 import com.example.api.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -18,5 +18,11 @@ public class ArticleController {
     {
         return articleService.saveArticle(article);
 
+    }
+    @GetMapping("/articles/{id}")
+
+    public ResponseEntity<Optional<Article>> getArticleById(@PathVariable  long id){
+        Optional<Article> article = articleService.getArticle(id);
+        return ResponseEntity.ok(article);
     }
 }
