@@ -1,14 +1,13 @@
 package com.example.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -22,4 +21,11 @@ public class Article {
     private String name;
     private Integer prix;
     private String picture;
+
+    @ManyToOne
+    @JsonIgnore // this json resolve the error java.lang.IllegalStateException Cannot call sendError()
+    @JoinColumn(name = "ordre_id")
+    private Ordre order;
+
+
 }

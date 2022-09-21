@@ -29,17 +29,19 @@ public class ApiApplication {
 
 
 
-//	@Bean
-//	CommandLineRunner run() {
-//		return args -> {
-//			Article article =new Article(null,"hasna",100,"farah");
-//			articleService.saveArticle(article);
-//			List<Article> articles = new ArrayList<>();
-//			articles.add(article);
-//			Ordre order =new Ordre(null,null,articles);
-//			orderService.saveOrder(order);
-//
-//		};
-//	}
+	@Bean
+	CommandLineRunner run() {
+		return args -> {
+			Article article =new Article(null,"hasna",100,"farah",null);
+			articleService.saveArticle(article);
+			List<Article> articles = new ArrayList<>();
+			articles.add(article);
+			Ordre order =new Ordre(null,null, null);
+			orderService.saveOrder(order);
+			Article article1 =new Article(null,"hasna",100,"farah",order);
+			articleService.saveArticle(article1);
+
+		};
+	}
 
 }
