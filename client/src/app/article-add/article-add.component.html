@@ -1,0 +1,61 @@
+
+
+
+
+
+<mat-toolbar style="background-color:white ;"> 
+  
+    <span class="T1">New Article</span>
+    
+</mat-toolbar>
+  
+  <form class="example-form" [formGroup]="offerForm" (submit)="onSubmit()" style="margin-top: 50px;">
+    <div >
+    <label class="title">Title</label>
+    <mat-form-field class="example-full-width" >
+      <input matInput type="text"  formControlName="title">
+       <!-- <mat-error *ngIf="offerForm.controls['title'].hasError('required')">
+        Title is <strong>required</strong>
+      </mat-error> -->
+    </mat-form-field>
+    
+  </div>
+  <div  >
+   <label class="title"> Price</label>
+   <mat-form-field class="example-full-width" >
+    <input matInput type="text"  formControlName="prix">
+      <span matPrefix>$&nbsp;</span>
+      
+      <!-- <mat-error *ngIf="offerForm.controls['prix'].hasError('required')">
+        Price is <strong>required</strong>
+     </mat-error> -->
+    </mat-form-field>
+  </div>
+   
+    
+    <br><br>
+    <div class="div3">
+      <label class="title">Upload Image</label>
+      <!-- <mat-form-field class="example-full-width" > -->
+        
+        <!-- <input matInput type="text"  formControlName="companyName"> -->
+        <input style="margin-left: 100px;" type="file" accept="image/*" (change)="onFileSelected($event)" formControlName="companyName">
+         <!-- <img [src]="imgURL" height="200" *ngIf="imgURL"> -->
+        <!-- <mat-error *ngIf="offerForm.controls['companyName'].hasError('required')">
+          Company Name is <strong>required</strong>
+        </mat-error> -->
+      <!-- </mat-form-field> -->
+      
+    </div>
+
+   
+  
+    <button type="submit" value="Submit" class="btn btn-primary" style="margin-left: 170px;"  >Submit</button>
+    
+    <button class="btn btn-primary btn-large center"  style="margin-left:10px ;"
+          type="reset" 
+          ng-click="reset()">Clear
+  </button>
+  
+    
+  </form>

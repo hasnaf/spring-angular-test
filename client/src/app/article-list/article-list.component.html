@@ -1,0 +1,32 @@
+<h1 class="title"> List Of Articles</h1>
+    <!-- <button class="cn"><a [routerLink]="['/add']">Add Offer</a></button>
+    <i class="fa fa-refresh" aria-hidden="true"></i> -->
+    <div class="contaner border-bottom" >
+      <div class="row">
+        <div class="col-lg-3 align-left"*ngFor="let article of articles ">
+    
+  <div class="card" style="width: 18rem;">
+      
+      <div class="card-body">
+        <h1 class="card-title">{{article.name}}</h1>
+        <h3 class="card-price">Price : {{article.prix}}$</h3>
+        <!-- <h3 class="card-city">City:{{offer.ville}}</h3> --> 
+        
+        <img class="card-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <p class="card-text"></p>
+        <!-- <button class="submit1 " mat-raised-button style="background-color: white; color: #203248;" (click)=updateOffer(offer) routerLink="/edit" >Update</button>
+        &nbsp;
+        <button class="submit1" mat-raised-button style="background-color: white; color: #203248;" (click)=deleteOffer(offer)  >Delete</button> -->
+        <br><br>
+        <!-- <button class="submit3" mat-raised-button style="background-color: #203248; color: white;" routerLink="/edit" >voir les condidatures</button>&nbsp; -->
+        <!-- (click)=updateOffer(offer)  -->
+        <button class="submit3" mat-raised-button style="background-color: #203248; color: white;" routerLink="/edit" > Add to card </button>&nbsp;
+      </div>
+    </div>
+    &nbsp;
+    
+  </div>
+  
+                      
+  </div>
+  </div>

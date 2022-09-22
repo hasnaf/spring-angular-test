@@ -1,0 +1,21 @@
+
+<h1 class="title"> List Of Articles</h1>
+
+<table class="table" *ngFor="let order of orders " style="width: 700px; margin-left:300px">
+    <thead class="thead-dark" >
+      <tr>
+        
+        <th scope="col">Id</th>
+        <th scope="col">Date</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{order.id}}</td>
+        <td>{{order.date | date :'medium'}}</td>
+        <td><button>Edit</button></td>
+      </tr>
+      
+    </tbody>
+  </table>

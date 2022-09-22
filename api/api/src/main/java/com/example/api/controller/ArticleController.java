@@ -21,7 +21,7 @@ public class ArticleController {
 
     @Autowired
     private ArticleRepository articleRepository;
-    @PostMapping("/articles")
+    @PostMapping("/articless")
     public Article saveArticle(@RequestBody Article article)
     {
         return articleService.saveArticle(article);
