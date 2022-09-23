@@ -9,8 +9,8 @@ import { Article } from "src/models/article.model";
   })
 export class ArticleService {
     constructor(private http: HttpClient) {}
-    private articlesUrl2 = "http://localhost:8080/api/articless";
-    private articlesUrl1 = "http://localhost:8080/api/articles";
+    private articlesUrl2 = "http://localhost:9090/api/articless";
+    private articlesUrl1 = "http://localhost:9090/api/articles";
   getArticles(): Observable<Article[]> {
     return this.http.get<Article[]>(this.articlesUrl1)
   }

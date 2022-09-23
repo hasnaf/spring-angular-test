@@ -10,22 +10,22 @@ import { Order } from "src/models/order.model";
   })
 export class OrderService {
     constructor(private http: HttpClient) {}
-    private articlesUrl2 = "http://localhost:8080/api/articless";
-    private ordersUrl1 = "http://localhost:8080/api/orders";
+    private ordersUrl2 = "http://localhost:9090/api/orders";
+    private ordersUrl1 = "http://localhost:9090/api/orders1";
   getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.ordersUrl1)
+    return this.http.get<Order[]>(this.ordersUrl2)
   }
 
 //   getArticleById(payload: number): Observable<Article> {
 //     return this.http.get<Article>(`${this.offersUrl4}/${payload}`);
 //   }
 
-//   addArticle(data: any): Observable<any> /*Observable<any>*/ {
-//     //offer.id = null;
-//     return this.http.post<any>(this.articlesUrl2, data).pipe(map((res:any)=>{
-//         return res;
-//     }
-//     ))
+  addOrder(data: any): Observable<any> /*Observable<any>*/ {
+    //offer.id = null;
+    return this.http.post<any>(this.ordersUrl1, data).pipe(map((res:any)=>{
+        return res;
+    }
+    ))
       
-//   }
+  }
 }
